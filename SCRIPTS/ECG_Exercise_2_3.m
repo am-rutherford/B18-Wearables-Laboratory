@@ -14,15 +14,15 @@ sigN = normalize(sigN - mean(sigN));
 sigA = normalize(sigA - mean(sigA));
 
 %% 2. Filter
-fs = 300; % Hz
-fLow = 100; % Hz
-fHigh = 0.5; % Hz
+fs = 300;  % Hz
+fLow = 100;  % Hz
+fHigh = 0.5;  % Hz
 order = 4;
 
 sigN_filtered = filter_ecg(sigN, fs, fHigh, fLow, order);
 sigA_filtered = filter_ecg(sigA, fs);
 
-%% 3. Plot
+%% 3. Plot many things
 time = (1:length(sigA_filtered))./fs;
 figure('Name','ECG post filter');
 subplot(2,2,1);
